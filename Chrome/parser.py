@@ -45,7 +45,7 @@ def get_profile_image_url(browser: webdriver.Chrome):
         return 'None'
 
 
-def get_join_in_year(browser: webdriver):
+def get_join_in(browser: webdriver):
     try:
         action = ActionChains(browser)
 
@@ -63,7 +63,7 @@ def get_join_in_year(browser: webdriver):
 
 info_functions = {
     'Username': get_username,
-    'Join in': get_join_in_year,
+    'Join in': get_join_in,
     'Followers': get_followers,
     'Description': get_description,
     'Location': get_location,
