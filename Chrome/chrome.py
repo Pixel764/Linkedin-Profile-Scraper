@@ -37,6 +37,19 @@ def login() -> None:
         # Send form
         password_field.send_keys(Keys.ENTER)
 
+        # Check if username or email is correct
+        try:
+            browser.find_element(By.ID, 'error-for-username')
+        except NoSuchElementException:
+            print('Incorrect username or email!')
+            exit()
+
+        # Check if password is correct
+        try:
+            browser.find_element(By.ID, 'error-for-password')
+        except NoSuchElementException:
+            print('Incorrect Password!')
+            exit()
         # Save cookies in file
         pickle.dump(browser.get_cookies(), open('cookies', 'wb'))
 

@@ -87,7 +87,7 @@ def parse_profiles(profile_urls: list, cookies, time_per_page: int) -> None:
     print('Parsing has start...')
     with webdriver.Chrome(service=service, options=options) as browser:
         browser.get('https://www.linkedin.com/home')
-        browser.implicitly_wait(3)
+        browser.implicitly_wait(4)
 
         for cookie in cookies:
             browser.add_cookie(cookie)
