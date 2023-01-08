@@ -75,7 +75,7 @@ def get_line(browser: webdriver.Chrome) -> str:
     line = []  # Line what will be added in file
     for func in info_functions.values():
         line.append(func(browser))
-    return ';'.join(line) + '\n'
+    return ','.join(line) + '\n'
 
 
 def parse_profiles(profile_urls: list, cookies, time_per_page: int) -> None:
@@ -98,7 +98,7 @@ def parse_profiles(profile_urls: list, cookies, time_per_page: int) -> None:
             for title in info_functions.keys():
                 titles.append(title)
 
-            result_file.write(';'.join(titles) + '\n')
+            result_file.write(','.join(titles) + '\n')
 
             for url in profile_urls:
                 try:
